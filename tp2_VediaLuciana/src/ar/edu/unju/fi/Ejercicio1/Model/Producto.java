@@ -4,6 +4,8 @@ public class Producto {
     private int codigo;
     private String descripcion;
     private double precioUnitario;
+    private OrigenFabricacion origenFabricacion;
+    private Categoria categoria;
 
     public enum OrigenFabricacion {
         ARGENTINA, CHINA, BRASIL, URUGUAY
@@ -13,8 +15,17 @@ public class Producto {
         TELEFONIA, INFORMATICA, ELECTROHOGAR, HERRAMIENTAS
     }
 
-    private OrigenFabricacion origenFabricacion;
-    private Categoria categoria;
+    public Producto() {
+        // Constructor vacío necesario para ciertos contextos
+    }
+
+    public Producto(int codigo, String descripcion, double precioUnitario, OrigenFabricacion origenFabricacion, Categoria categoria) {
+        this.codigo = codigo;
+        this.descripcion = descripcion;
+        this.precioUnitario = precioUnitario;
+        this.origenFabricacion = origenFabricacion;
+        this.categoria = categoria;
+    }
 
     // Getters y setters
     public int getCodigo() {
